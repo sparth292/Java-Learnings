@@ -13,8 +13,7 @@ public class CalculatorScreen extends JFrame {
        
        String s;
 
-       int numberArr[];
-       String symbolArr;
+       
        String processedNumberString;
        
 
@@ -165,35 +164,65 @@ public class CalculatorScreen extends JFrame {
                   t1.setText(t1.getText() + "/");
               }
           });
-
-          equalToButton.addActionListener(new ActionListener() {
+//45+89+104
+        //   equalToButton.addActionListener(new ActionListener() {
+        //     @Override
+        //     public void actionPerformed(ActionEvent e) {
+        //           s = t1.getText();
+        //           int numberArr[] = new int[s.length()];
+        //           char symbolArr[] = new char[s.length()];
+        //           int j = 0;
+        //           for(int i = 0 ; i < s.length() ; i++){
+        //             char ch = s.charAt(i);
+        //             if( ch == '+' || ch == '-' || ch == '*' || ch == '/' ){
+                       
+        //                 symbolArr[i] = ch;
+        //                 numberArr[j] = Integer.parseInt(processedNumberString);
+        //                 j++;
+        //                 processedNumberString = "";
+        //             }
+        //             else{
+        //                 processedNumberString += ch;
+        //             }
+                    
+        //           }
+        //           numberArr[j] = Integer.parseInt(processedNumberString);
+                  
+        //           System.out.println(numberArr[0] + " " + numberArr[1]);
+        //           System.out.println(symbolArr[0]);
+        //     }
+        // });
+          
+        equalToButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                  s = t1.getText();
-                  int j = 0; 
-                  for(int i = 0 ; i < s.length() ; i++){
+                s = t1.getText();
+                char[] symbolArr = new char[s.length()]; // Ensure proper initialization
+                int[] numberArr = new int[s.length()]; // Ensure proper initialization
+                processedNumberString = "";
+                int j = 0;
+                
+                for (int i = 0; i < s.length(); i++) {
                     char ch = s.charAt(i);
-                   if( ch == '+' || ch == '-' || ch == '*' || ch == '/' ){  
-                    symbolArr = "" + ch;
-                    numberArr[j] = Integer.parseInt(processedNumberString); 
-                    j++;
-                   }
-                   else{
-                     processedNumberString = s;
-                   }
-                   if(i==(s.length()-1)){
-                    numberArr[j] = Integer.parseInt(processedNumberString);  
-                   }
+                    if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
+                        symbolArr[j] = ch;
+                        numberArr[j] = Integer.parseInt(processedNumberString);
+                        j++;
+                        processedNumberString = "";
+                    } else {
+                        processedNumberString += ch;
+                    }
                 }
-               System.out.println(numberArr[1]);
-               System.out.println(symbolArr);
+                numberArr[j] = Integer.parseInt(processedNumberString);
+                switchCaseLogic(symbolArr, numberArr);
             }
         });
-          
-        
       
 }
-       
+       void switchCaseLogic(char[] symbolArr,int[] numberArr){
+            System.out.println(symbolArr[0]);
+            System.out.println(numberArr[0]+ " " +numberArr[1]);
+       }
 
 }
 

@@ -1,24 +1,19 @@
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-
 public class CalculatorScreen extends JFrame {
-
+       
        public JTextField t1 = new JTextField();
        
        String s;
 
-       
        String processedNumberString;
        
-
        JButton b1 = new JButton("1");
        JButton b2 = new JButton("2");
        JButton b3 = new JButton("3");
@@ -77,6 +72,8 @@ public class CalculatorScreen extends JFrame {
         this.add(p1);
         this.add(t1); 
         this.add(equalToButton);
+
+        this.setTitle("CALC");
         this.setResizable(false);
 
        b1.addActionListener(new ActionListener() {

@@ -28,7 +28,7 @@ class GraphicalUserInterface2{
         //l1.setBounds(100,100,250,250); // yeh x y coordinates set karta hai aur baki ke do attributes width aur heigth set karte hai
         //f1.setLayout(null);
         f1.setTitle("J Labels");
-        f1.setDefaultCloseOperation(f1.EXIT_ON_CLOSE);
+        f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f1.setVisible(true);
         //f1.setSize(500, 500);
         f1.add(l1);

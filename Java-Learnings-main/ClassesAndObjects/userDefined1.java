@@ -9,7 +9,7 @@ class stringMismatchedException extends Exception{
 
 class userDefined1{
     public static void main(String args[]){
-        Scanner s1= new Scanner(System.in);
+        Scanner s1 = new Scanner(System.in);
         System.out.print("Enter your matrubhumi: ");
         String country= s1.nextLine();
         try{

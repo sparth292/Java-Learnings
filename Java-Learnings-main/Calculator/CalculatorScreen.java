@@ -1,6 +1,8 @@
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -59,8 +61,10 @@ public class CalculatorScreen extends JFrame {
         p2.setBounds(7,70,138,32);
         p3.setBounds(7,100,138,32);
         p4.setBounds(148,7,50,130);
+
         t1.setBounds(7,7,140,30);
         equalToButton.setBounds(7, 140, 185, 30);
+
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
@@ -74,6 +78,7 @@ public class CalculatorScreen extends JFrame {
         this.add(t1); 
         this.add(equalToButton);
         this.setResizable(false);
+
        b1.addActionListener(new ActionListener() {
               @Override
               public void actionPerformed(ActionEvent e) {
@@ -88,13 +93,13 @@ public class CalculatorScreen extends JFrame {
                   t1.setText(t1.getText() + "2");
               }
           });
+
        b3.addActionListener(new ActionListener() {
               @Override
               public void actionPerformed(ActionEvent e) {
                   t1.setText(t1.getText() + "3");
               }
           });
-          
           
        b4.addActionListener((ActionListener) new ActionListener() {
               @Override
@@ -116,6 +121,7 @@ public class CalculatorScreen extends JFrame {
                   t1.setText(t1.getText() + "6");
               }
           });
+
        b7.addActionListener(new ActionListener() {
               @Override
               public void actionPerformed(ActionEvent e) {
@@ -123,13 +129,13 @@ public class CalculatorScreen extends JFrame {
               }
           });
           
-          
        b8.addActionListener((ActionListener) new ActionListener() {
               @Override
               public void actionPerformed(ActionEvent e) {
                   t1.setText(t1.getText() + "8");
               }
           });
+
        b9.addActionListener(new ActionListener() {
               @Override
               public void actionPerformed(ActionEvent e) {
@@ -137,13 +143,13 @@ public class CalculatorScreen extends JFrame {
               }
           });
           
-          
        addButton.addActionListener((ActionListener) new ActionListener() {
               @Override
               public void actionPerformed(ActionEvent e) {
                   t1.setText(t1.getText() + "+");
               }
           });
+
        subButton.addActionListener(new ActionListener() {
               @Override
               public void actionPerformed(ActionEvent e) {
@@ -151,13 +157,13 @@ public class CalculatorScreen extends JFrame {
               }
           });
           
-          
        mulButton.addActionListener((ActionListener) new ActionListener() {
               @Override
               public void actionPerformed(ActionEvent e) {
                   t1.setText(t1.getText() + "*");
               }
           });
+          
        divButton.addActionListener(new ActionListener() {
               @Override
               public void actionPerformed(ActionEvent e) {

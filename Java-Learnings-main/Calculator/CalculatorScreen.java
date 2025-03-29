@@ -55,16 +55,16 @@ public class CalculatorScreen extends JFrame {
         p4.add(mulButton);
         p4.add(divButton);
 
-        p1.setBounds(7,40,138,500);
-        p2.setBounds(7,70,138,500);
-        p3.setBounds(7,100,138,500);
-        p4.setBounds(148,7,50,500);
+        p1.setBounds(7,40,138,32);
+        p2.setBounds(7,70,138,32);
+        p3.setBounds(7,100,138,32);
+        p4.setBounds(148,7,50,130);
         t1.setBounds(7,7,140,30);
-        equalToButton.setBounds(300, 300, 120, 30);
+        equalToButton.setBounds(7, 140, 185, 30);
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
-        this.setSize(350,350);    
+        this.setSize(220,220);    
         this.setVisible(true);
         
         this.add(p4);
@@ -73,7 +73,7 @@ public class CalculatorScreen extends JFrame {
         this.add(p1);
         this.add(t1); 
         this.add(equalToButton);
-       
+        this.setResizable(false);
        b1.addActionListener(new ActionListener() {
               @Override
               public void actionPerformed(ActionEvent e) {
@@ -164,34 +164,6 @@ public class CalculatorScreen extends JFrame {
                   t1.setText(t1.getText() + "/");
               }
           });
-//45+89+104
-        //   equalToButton.addActionListener(new ActionListener() {
-        //     @Override
-        //     public void actionPerformed(ActionEvent e) {
-        //           s = t1.getText();
-        //           int numberArr[] = new int[s.length()];
-        //           char symbolArr[] = new char[s.length()];
-        //           int j = 0;
-        //           for(int i = 0 ; i < s.length() ; i++){
-        //             char ch = s.charAt(i);
-        //             if( ch == '+' || ch == '-' || ch == '*' || ch == '/' ){
-                       
-        //                 symbolArr[i] = ch;
-        //                 numberArr[j] = Integer.parseInt(processedNumberString);
-        //                 j++;
-        //                 processedNumberString = "";
-        //             }
-        //             else{
-        //                 processedNumberString += ch;
-        //             }
-                    
-        //           }
-        //           numberArr[j] = Integer.parseInt(processedNumberString);
-                  
-        //           System.out.println(numberArr[0] + " " + numberArr[1]);
-        //           System.out.println(symbolArr[0]);
-        //     }
-        // });
           
         equalToButton.addActionListener(new ActionListener() {
             @Override
@@ -219,10 +191,55 @@ public class CalculatorScreen extends JFrame {
         });
       
 }
+// 45 62 47    + -
+
        void switchCaseLogic(char[] symbolArr,int[] numberArr){
-            System.out.println(symbolArr[0]);
-            System.out.println(numberArr[0]+ " " +numberArr[1]);
+       int[] numberHolder = new int[2];
+       int result = 0;
+       numberHolder[0] = numberArr[0]; // numberholder me gya 45
+       for(int i = 0 ; i < symbolArr.length ; i++){
+       char ch = symbolArr[i];
+       numberHolder[1] = numberArr[i+1];  
+       switch (ch) {
+             
+            case '+':
+                
+                System.out.println(numberHolder[0] + numberHolder[1]);
+                result = numberHolder[0] + numberHolder[1];
+                numberHolder[0] = result;
+                t1.setText(Integer.toString(result));
+                break;
+            case '-':
+
+                System.out.println(numberHolder[0] - numberHolder[1]);
+                result = numberHolder[0] - numberHolder[1];
+                numberHolder[0] = result;
+                t1.setText(Integer.toString(result));
+                break;
+
+            case '*':
+
+                System.out.println(numberHolder[0] * numberHolder[1]);
+                result = numberHolder[0] * numberHolder[1];
+                numberHolder[0] = result;
+                t1.setText(Integer.toString(result));
+                break;
+            case '/':
+            
+                System.out.println(numberHolder[0] / numberHolder[1]);
+                result = numberHolder[0] / numberHolder[1];
+                numberHolder[0] = result;
+                t1.setText(Integer.toString(result));
+                break;    
+            
+            default:
+                break;
+           }
+
        }
+
+        
+    }
 
 }
 

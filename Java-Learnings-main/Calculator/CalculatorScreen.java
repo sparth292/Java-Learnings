@@ -10,6 +10,8 @@ public class CalculatorScreen extends JFrame {
        
        public JTextField t1 = new JTextField();
        
+       
+
        String s;
 
        String processedNumberString;
@@ -36,6 +38,9 @@ public class CalculatorScreen extends JFrame {
        JPanel p4 = new JPanel();
 
         CalculatorScreen() {
+
+        t1.setEditable(false);
+        
 
         p1.add(b1);
         p1.add(b2);

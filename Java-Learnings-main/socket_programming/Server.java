@@ -11,7 +11,6 @@ public class Server {
 
     public static void main(String[] args) throws Exception{
         
-    
         ServerSocket serverSocket = new ServerSocket(9000);
         Socket socket = new Socket();
         socket = serverSocket.accept();
@@ -27,7 +26,7 @@ public class Server {
         while(!message.equalsIgnoreCase("quit")) {
 
             
-                 
+    
                 message = dis.readUTF();
                 System.out.print("client: "+message+" \n");
                 System.out.print("Enter message: ");

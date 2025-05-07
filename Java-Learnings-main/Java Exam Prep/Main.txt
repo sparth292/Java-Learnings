@@ -1,0 +1,13 @@
+import pack1.PackagesInJava;
+
+class Main{
+
+public static void main(){
+
+PackagesInJava p1 = new PackagesInJava();
+p1.pack();
+
+}
+
+
+}

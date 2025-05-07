@@ -1,0 +1,36 @@
+class cuh implements Runnable{
+
+public void run(){
+
+System.out.println("heyy");
+
+}
+
+}
+
+class duh implements Runnable{
+
+public void run(){
+
+System.out.println("Bye");
+
+}
+
+}
+
+class RunnableKaKaam{
+
+public static void main(String args[]){
+
+duh d = new duh();
+cuh c = new cuh();
+
+Thread t1 = new Thread(d);
+Thread t2 = new Thread(c);
+
+t1.start();
+t2.start();
+
+}
+
+}
